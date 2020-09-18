@@ -1,0 +1,66 @@
+
+#######################
+# -- BUILD CONFIGS -- #
+#######################
+
+# OUTPUT
+build --show_timestamps
+build --verbose_failures
+#build --verbose_explanations
+#build --explain=.bazel_build_latest.logs
+build --curses=yes --color=yes --copt=-fdiagnostics-color=always
+build --logging=6
+build --record_rule_instantiation_callstack
+
+# ENV
+build --host_javabase=@bazel_tools//tools/jdk:remote_jdk11
+build --javabase=@bazel_tools//tools/jdk:remote_jdk11
+build --host_java_toolchain=@bazel_tools//tools/jdk:toolchain_java11
+build --java_toolchain=@bazel_tools//tools/jdk:toolchain_java11
+build --incompatible_strict_action_env
+
+# PERFORMANCE
+build --local_cpu_resources=HOST_CPUS*.66
+build --local_ram_resources=HOST_RAM*.66
+#build --jobs=4
+
+# STATEGIES
+build --strategy=KotlinCompile=worker
+build --experimental_persistent_javac
+
+# Caching
+build --disk_cache=~/.bazel/disk_cache
+build --repository_cache=~/.bazel/repository_cache
+
+######################
+# -- TEST CONFIGS -- #
+######################
+
+# OUTPUT
+test --test_output=all --show_timestamps
+test --verbose_explanations
+test --verbose_failures
+test --explain=.bazel_test_latest.logs
+test --curses=yes --color=yes --copt=-fdiagnostics-color=always
+test --logging=6
+# test --test_verbose_timeout_warnings
+
+# ENV
+test --incompatible_strict_action_env
+
+# TEST
+test --runs_per_test=1
+test --cache_test_results=no
+
+# PERFORMANCE
+test --local_cpu_resources=HOST_CPUS*.66
+test --local_ram_resources=HOST_RAM*.66
+
+# STATEGIES
+test --strategy=KotlinCompile=worker
+test --experimental_persistent_javac
+
+# Caching
+test --disk_cache=./.bazel/disk_cache
+test --repository_cache=./.bazel/repository_cache
+

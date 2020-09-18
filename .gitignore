@@ -1,0 +1,22 @@
+
+/bazel-*
+.bazel
+.buildlog
+.bazel_build_latest.logs
+.bazel_test_latest.logs
+
+.idea
+.ijwb
+.env
+.env_stage
+
+# MYSQL
+sql/*
+
+#MISC
+README.drew.md
+
+Makefile*
+
+# Google
+google_credentials.json

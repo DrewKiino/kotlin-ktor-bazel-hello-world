@@ -1,0 +1,36 @@
+load("@io_bazel_rules_kotlin//kotlin:kotlin.bzl", "kt_jvm_library", "kt_jvm_test", "kt_jvm_binary")
+load("@rules_jvm_external//:defs.bzl", "artifact")
+
+java_binary(
+    name = "app-api-deployable",
+    main_class = "service.app.public.api.Main",
+    runtime_deps = [
+        ":app-api"
+    ],
+    resources = glob([
+        "src/main/resources/**/*",
+    ]),
+    javacopts = [
+#        "-source 52",
+#        "-target 52",
+    ],
+    tags = [
+        "no-cache"
+    ],
+)
+
+kt_jvm_library(
+    name = "app-api",
+    srcs = glob([
+        "src/main/kotlin/**/*.kt",
+    ]),
+    visibility = [
+    ],
+    deps = [
+        # libs
+        "//library/maven:kotlin",
+        "//library/maven:ktor",
+        "//library/maven:koin",
+        "//library/maven:jackson",
+    ],
+)

@@ -1,0 +1,141 @@
+load("@io_bazel_rules_kotlin//kotlin:kotlin.bzl", "kt_jvm_library", "kt_jvm_test", "kt_jvm_binary")
+load("@rules_jvm_external//:defs.bzl", "artifact")
+
+kt_jvm_library(
+    name = "kotlin",
+    visibility = [
+        "//visibility:public"
+    ],
+    srcs = glob([
+        "src/main/kotlin/**/*.kt",
+    ]),
+    deps = [
+        artifact("org.jetbrains.kotlin:kotlin-stdlib"),
+        artifact("org.jetbrains.kotlin:kotlin-reflect"),
+        artifact("org.jetbrains.kotlinx:kotlinx-coroutines-core"),
+        artifact("org.jetbrains.kotlinx:kotlinx-coroutines-core-common"),
+        artifact("org.jetbrains.kotlinx:kotlinx-coroutines-io"),
+        artifact("org.jetbrains.kotlinx:kotlinx-io"),
+        artifact("com.google.guava:guava"),
+    ],
+)
+
+kt_jvm_library(
+    name = "logging",
+    visibility = [
+        "//visibility:public"
+    ],
+    srcs = glob([
+        "src/main/kotlin/**/*.kt",
+    ]),
+    deps = [
+        # logger
+        artifact("org.slf4j:slf4j-api"),
+        artifact("org.slf4j:slf4j-simple"),
+        artifact("ch.qos.logback:logback-classic"),
+    ],
+)
+
+kt_jvm_library(
+    name = "koin",
+    visibility = [
+        "//visibility:public"
+    ],
+    srcs = glob([
+        "src/main/kotlin/**/*.kt",
+    ]),
+    deps = [
+        artifact("org.koin:koin-core"),
+        artifact("org.koin:koin-core-ext"),
+        artifact("org.koin:koin-test"),
+        artifact("org.koin:koin-ktor"),
+    ],
+)
+
+kt_jvm_library(
+    name = "ktor",
+    visibility = [
+        "//visibility:public"
+    ],
+    srcs = glob([
+        "src/main/kotlin/**/*.kt",
+    ]),
+    deps = [
+        "//library/maven:jackson",
+
+        artifact("org.slf4j:slf4j-api"),
+        artifact("org.slf4j:slf4j-simple"),
+
+        artifact("io.ktor:ktor-server"),
+        artifact("io.ktor:ktor-server-netty"),
+        artifact("io.ktor:ktor-server-core"),
+        artifact("io.ktor:ktor-server-host-common"),
+
+        artifact("io.ktor:ktor-client"),
+        artifact("io.ktor:ktor-client-core"),
+        artifact("io.ktor:ktor-client-logging"),
+        artifact("io.ktor:ktor-client-json"),
+        artifact("io.ktor:ktor-client-gson"),
+        artifact("io.ktor:ktor-client-cio"),
+        artifact("io.ktor:ktor-client-serialization"),
+
+        artifact("io.ktor:ktor-http"),
+        artifact("io.ktor:ktor-http-cio"),
+        artifact("io.ktor:ktor-http-cio-jvm"),
+
+        artifact("io.ktor:ktor-gson"),
+        artifact("io.ktor:ktor-jackson"),
+        artifact("io.ktor:ktor-locations"),
+        artifact("io.ktor:ktor-features"),
+        artifact("io.ktor:ktor-utils"),
+        artifact("io.ktor:ktor-network"),
+        artifact("io.ktor:ktor-io"),
+        artifact("io.ktor:ktor-websockets"),
+
+        artifact("io.ktor:ktor-server-test-host"),
+    ],
+)
+
+kt_jvm_library(
+    name = "junit",
+    visibility = [
+        "//visibility:public"
+    ],
+    srcs = glob([
+        "src/main/kotlin/**/*.kt",
+    ]),
+    deps = [
+        # test
+        artifact("junit:junit"),
+        artifact("org.junit.jupiter:junit-jupiter-api"),
+        artifact("org.junit.jupiter:junit-jupiter-engine"),
+        artifact("org.junit.platform:junit-platform-runner"),
+        artifact("org.junit.platform:junit-platform-launcher"),
+        artifact("org.junit.platform:junit-platform-console"),
+
+        artifact("org.jetbrains.kotlin:kotlin-test"),
+
+        artifact("org.koin:koin-test"),
+
+        artifact("io.mockk:mockk"),
+    ],
+)
+
+kt_jvm_library(
+    name = "jackson",
+    visibility = [
+        "//visibility:public"
+    ],
+    srcs = glob([
+        "src/main/kotlin/**/*.kt",
+    ]),
+    deps = [
+        artifact("com.fasterxml.jackson.core:jackson-core"),
+        artifact("com.fasterxml.jackson.core:jackson-annotations"),
+        artifact("com.fasterxml.jackson.core:jackson-databind"),
+        artifact("com.fasterxml.jackson.datatype:jackson-datatype-guava"),
+        artifact("com.fasterxml.jackson.datatype:jackson-datatype-jsr310"),
+        artifact("com.fasterxml.jackson.module:jackson-module-kotlin"),
+        artifact("com.fasterxml.jackson.module:jackson-modules-java8"),
+    ],
+)
