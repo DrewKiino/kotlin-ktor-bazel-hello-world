@@ -3,14 +3,14 @@
 
 ## Installation
 
-##### download [bazel](https://bazel.build/) (our build system)
+1. download [bazel](https://bazel.build/) (our build system)
 
-##### download [intellij](https://www.jetbrains.com/idea/download/other.html) (ide)
+2. ownload [intellij](https://www.jetbrains.com/idea/download/other.html) (ide)
 
 Note: as of 06/20 the bazel intellij plugin doesn't work for Windows and does not work on 2020 versions of IntelliJ.
 Please view the plugin's page for most recent releases and the supported IntelliJ versions. 
 
-##### download [bazel intellij plugin](https://plugins.jetbrains.com/plugin/8609-bazel/versions) (build plugin for intellij)
+3. download [bazel intellij plugin](https://plugins.jetbrains.com/plugin/8609-bazel/versions) (build plugin for intellij)
 
 Note: 
 * the plugin can be installed via IntelliJ instead of downloading the jar at the link
