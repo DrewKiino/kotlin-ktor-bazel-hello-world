@@ -31,8 +31,10 @@ Prereqs: Installation step above
 
 4. Under `Project View` -> `Additional Languages`, uncomment `kotlin`, and finish
 
-! If Bazel does not sync, you can copy the path from executing `which bazel` in the terminal in IntelliJ or on your machines terminal, then go to Preferences/Settings -> Bazel Settings -> and paste the returned path from `which bazel` into the Bazel binary location and save
+5. Once the IDE gets setup you should be able to see a green bazel heart icon in the top right,
+hit that and the project should start syncing.
 
+! If Bazel does not sync, you can copy the path from executing `which bazel` in the terminal in IntelliJ or on your machines terminal, then go to Preferences/Settings -> Bazel Settings -> and paste the returned path from `which bazel` into the Bazel binary location and save
 
 ## Commands
 
@@ -45,3 +47,7 @@ To simply build the service
 ```shell script
 bazel build //service/app/public/api:app-api
 ```
+
+## Support
+
+If you have any issues, feel free to contact me `andrewaquino118@gmail.com`. 
