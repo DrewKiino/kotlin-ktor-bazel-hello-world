@@ -36,9 +36,6 @@ Prereqs: Installation step above
 
 ## Commands
 
-Once you installed the custom Bazel commands from the above installation section.
-You can do things like this...
-
 To locally run a service by starting its API server
 ```shell script
 bazel run //service/app/public/api:app-api-deployable
