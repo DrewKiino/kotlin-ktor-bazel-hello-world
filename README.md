@@ -3,21 +3,21 @@
 
 ## Installation
 
-1. download [bazel](https://bazel.build/) (our build system)
+1. Download [bazel](https://bazel.build/) (our build system)
 
-2. ownload [intellij](https://www.jetbrains.com/idea/download/other.html) (ide)
+2. Download [intellij](https://www.jetbrains.com/idea/download/other.html) (ide)
 
-Note: as of 06/20 the bazel intellij plugin doesn't work for Windows and does not work on 2020 versions of IntelliJ.
-Please view the plugin's page for most recent releases and the supported IntelliJ versions. 
+  Note: as of 06/20 the bazel intellij plugin doesn't work for Windows and does not work on 2020 versions of IntelliJ. 
+  Please view the plugin's page for most recent releases and the supported IntelliJ versions. 
 
-3. download [bazel intellij plugin](https://plugins.jetbrains.com/plugin/8609-bazel/versions) (build plugin for intellij)
+3. Download [bazel intellij plugin](https://plugins.jetbrains.com/plugin/8609-bazel/versions) (build plugin for intellij)
 
-Note: 
-* the plugin can be installed via IntelliJ instead of downloading the jar at the link
-* as of 6/20, the plugin does not support Windows per [this page](https://ij.bazel.build/docs/bazel-support.html)
-* Make sure your JAVA version in your computer is 11 or higher. You can know by doing `java --version` in the terminal
-* Make sure you set your Kotlin JVM to 11 in IntelliJ and Kotlin version to Stable
-* Import your project as a Bazel project and use Bazel Sync get imports working
+  Note: 
+  * the plugin can be installed via IntelliJ instead of downloading the jar at the link
+  * as of 6/20, the plugin does not support Windows per [this page](https://ij.bazel.build/docs/bazel-support.html)
+  * Make sure your JAVA version in your computer is 11 or higher. You can know by doing `java --version` in the terminal
+  * Make sure you set your Kotlin JVM to 11 in IntelliJ and Kotlin version to Stable
+  * Import your project as a Bazel project and use Bazel Sync get imports working
 
 ## Importing This project into IntelliJ
 
