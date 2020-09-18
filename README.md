@@ -31,14 +31,8 @@ Prereqs: Installation step above
 
 4. Under `Project View` -> `Additional Languages`, uncomment `kotlin`, and finish
 
-5. After Bazel has sync'd, run `make local_db`
-after mysql is running, in another terminal, run `make clean_migrate_mock_db` (view Database Commands for more context)
 ! If Bazel does not sync, you can copy the path from executing `which bazel` in the terminal in IntelliJ or on your machines terminal, then go to Preferences/Settings -> Bazel Settings -> and paste the returned path from `which bazel` into the Bazel binary location and save
 
-6. Ask a backend developer for the `.env` file, `Makefile`, and `google_credentials.json`, which goes in the root folder.
-
-From here, you should be able to run the Repository tests
-`bazel_test app repository`
 
 ## Commands
 
